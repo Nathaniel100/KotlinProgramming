@@ -1,4 +1,4 @@
-package io.ginger.kotlin.basic
+package io.ginger.kotlin.tutorial.basic
 
 /**
  * Created by wufan on 2017/5/27.

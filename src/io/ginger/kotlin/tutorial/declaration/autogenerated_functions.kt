@@ -1,4 +1,4 @@
-package io.ginger.kotlin.declaration
+package io.ginger.kotlin.tutorial.declaration
 
 /**
  * Created by wufan on 2017/5/27.

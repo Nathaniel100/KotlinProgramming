@@ -1,4 +1,4 @@
-package io.ginger.kotlin.callable
+package io.ginger.kotlin.tutorial.callable
 
 /**
  * Created by wufan on 2017/5/27.

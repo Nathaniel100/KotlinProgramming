@@ -1,4 +1,4 @@
-package io.ginger.kotlin.delegated_properties
+package io.ginger.kotlin.tutorial.delegated_properties
 
 import kotlin.properties.Delegates
 
