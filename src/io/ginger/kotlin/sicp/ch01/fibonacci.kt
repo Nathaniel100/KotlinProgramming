@@ -22,7 +22,14 @@ fun fibI(n: Long): Long {
     return fibIter(n, 0, 0, 1)
 }
 
-// todo faster method
+fun fibFast(n: Long): Long {
+    tailrec fun fibFastIter(a: Long, b: Long, p: Long, q: Long, count: Long): Long {
+        if(count == 0L) return b
+        else if(isEven(count)) return fibFastIter(a, b, q*q + p*p, q*q + 2*p*q, count / 2)
+        else return fibFastIter(b*q + a*q + a*p, b*p + a*q, p, q, count - 1)
+    }
+    return fibFastIter(1, 0, 0, 1, n)
+}
 
 fun main(args: Array<String>) {
     println(fibR(6))
@@ -36,5 +43,11 @@ fun main(args: Array<String>) {
     println(fibI(40))
     println(fibI(50))
     println(fibI(100))
+
+    println(fibFast(6))
+    println(fibFast(20))
+    println(fibFast(40))
+    println(fibFast(50))
+    println(fibFast(100))
 }
 
