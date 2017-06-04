@@ -22,52 +22,52 @@ fun <T, R> sumI(term: (T) -> R, a: T, next: (T) -> T, b: T, initial: R,
 
 
 fun sumCubes(a: Int, b: Int): Int = sum(
-        { it -> it * it * it }, a, { it -> it + 1 }, b,
+        { it * it * it }, a, { it + 1 }, b,
         0, Int::compareTo, Int::plus
 )
 
 fun sumIntegers(a: Int, b: Int): Int = sum(
-        { it -> it }, a, { it -> it + 1 }, b,
+        { it }, a, { it + 1 }, b,
         0, Int::compareTo, Int::plus
 )
 
 fun piSum(a: Int, b: Int): Double = sum(
-        { it -> 1.0 / (it * (it + 2)) }, a, { it -> it + 4 }, b,
+        { 1.0 / (it * (it + 2)) }, a, { it + 4 }, b,
         0.0, Int::compareTo, Double::plus
 )
 
 fun integral(f: (Double) -> Double, a: Int, b: Int, dx: Double): Double =
-        dx * sum(f, (a + dx / 2), { it -> it + dx }, b.toDouble(),
+        dx * sum(f, (a + dx / 2), { it + dx }, b.toDouble(),
                 0.0, Double::compareTo, Double::plus)
 
 fun sumCubesI(a: Int, b: Int): Int = sumI(
-        { it -> it * it * it }, a, { it -> it + 1 }, b,
+        { it * it * it }, a, { it + 1 }, b,
         0, Int::compareTo, Int::plus
 )
 
 fun sumIntegersI(a: Int, b: Int): Int = sumI(
-        { it -> it }, a, { it -> it + 1 }, b,
+        { it }, a, { it + 1 }, b,
         0, Int::compareTo, Int::plus
 )
 
 fun piSumI(a: Int, b: Int): Double = sumI(
-        { it -> 1.0 / (it * (it + 2)) }, a, { it -> it + 4 }, b,
+        { 1.0 / (it * (it + 2)) }, a, { it + 4 }, b,
         0.0, Int::compareTo, Double::plus
 )
 
 fun integralI(f: (Double) -> Double, a: Int, b: Int, dx: Double): Double =
-        dx * sumI(f, (a + dx / 2), { it -> it + dx }, b.toDouble(),
+        dx * sumI(f, (a + dx / 2), { it + dx }, b.toDouble(),
                 0.0, Double::compareTo, Double::plus)
 
 fun main(args: Array<String>) {
     println(sumCubes(1, 10))
     println(sumIntegers(1, 10))
     println(8 * piSum(1, 10000))
-    println(integral({ it -> it * it * it }, 0, 1, 0.001))
+    println(integral({ it * it * it }, 0, 1, 0.001))
 
     println(sumCubesI(1, 10))
     println(sumIntegersI(1, 10))
     println(8 * piSumI(1, 10000))
-    println(integralI({ it -> it * it * it }, 0, 1, 0.001))
+    println(integralI({ it * it * it }, 0, 1, 0.001))
 }
 
