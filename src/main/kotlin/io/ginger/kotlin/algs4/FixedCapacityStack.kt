@@ -47,9 +47,8 @@ class FixedCapacityStack<T>(cap: Int) : Iterable<T> {
 
 fun main(args: Array<String>) {
     val stack = FixedCapacityStack<String>(100)
-    val stdin = StdIn()
-    while (!stdin.isEmpty()) {
-        val s = stdin.readString()
+    while (!isEmpty()) {
+        val s = readString()
         if (s != "-") stack.push(s)
         else if (!s.isEmpty()) print("${stack.pop()} ")
     }
